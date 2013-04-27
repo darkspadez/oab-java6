@@ -386,7 +386,7 @@ if [ -e /etc/apt/sources.list.d/flexiondotorg-java-${LSB_CODE}.list ]; then
 fi
 
 # Determine the build and runtime requirements.
-BUILD_DEPS="build-essential debhelper defoma devscripts dpkg-dev git-core \
+BUILD_DEPS="build-essential debhelper devscripts dpkg-dev git-core \
 gnupg imvirt libasound2 libxi6 libxt6 libxtst6 rng-tools unixodbc unzip"
 if [ "${LSB_ARCH}" == "amd64" ]; then
     BUILD_DEPS="${BUILD_DEPS} lib32asound2 ia32-libs"
@@ -463,7 +463,7 @@ DOWNLOAD_FOUND=`grep "jdk-${JAVA_VER}u${JAVA_UPD}-linux-i586\." /tmp/oab-downloa
 if [ -z "${DOWNLOAD_FOUND}" ]; then
     ncecho " [x] Getting previous releases download page "
     if [ "${JAVA_UPSTREAM}" == "sun-java6" ]; then
-        wget http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase6-419409.html -O /tmp/oab-download.html >> "$log" 2>&1 &
+        wget http://www.oracle.com/technetwork/java/javase/downloads/jdk6downloads-1902814.html -O /tmp/oab-download.html >> "$log" 2>&1 &
     else
         wget http://www.oracle.com/technetwork/java/javasebusiness/downloads/java-archive-downloads-javase7-521261.html -O /tmp/oab-download.html >> "$log" 2>&1 &    
     fi
